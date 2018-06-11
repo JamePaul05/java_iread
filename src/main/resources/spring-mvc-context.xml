@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!--扫描指定包下的类，并注册被@Component，@Controller，@Service，@Repository等注解标记的组件-->
+    <context:component-scan base-package="com.ifuture.iread.controller" />
+    <!--启用注解驱动，比如@RequestMapping-->
+    <mvc:annotation-driven/>
+
+    <!--springmvc处理静态资源经典方案之一-->
+    <!--将类路径下/resources路径映射为/resources/**-->
+    <!--cache-period可以设置静态资源在浏览器缓存时间-->
+    <mvc:resources mapping="/resources/**" location="/resources/" cache-period="10"/>
+    <mvc:resources mapping="/*.txt" location="/" cache-period="31556926"/>
+    <mvc:resources mapping="/data/**" location="/data/" cache-period="31556926"/>
+
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <!-- 定义tiles视图解析器 -->
+    <bean id="tilesViewResolver"
+                class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass">
+            <value>org.springframework.web.servlet.view.tiles3.TilesView
+            </value>
+        </property>
+        <!--定义优先级，不然被InternalResourceViewResolver抢先-->
+        <property name="order" value="1"></property>
+    </bean>
+
+    <bean id="tilesConfigurer"
+                class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**" />
+            <mvc:exclude-mapping path="/admin/login"/>
+            <beans:bean class="com.ifuture.iread.interceptor.LoginInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+</beans>

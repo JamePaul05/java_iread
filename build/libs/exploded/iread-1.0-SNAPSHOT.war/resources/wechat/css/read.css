@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 微软雅黑;
+}
+.header {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.header img {
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    margin-top:10px;
+}
+.article_content {
+    width: 97%;
+    height: auto;
+    margin-left: 3%;
+}
+.head_articleContent {
+    width: 97%;
+    height: auto;
+    margin-bottom: 5px;
+}
+.logo_articleContent {
+    width: 15px;
+    height: auto;
+    float: left;
+    margin-right: 7px;
+    margin-top: 2px;
+}
+.head_articleContent img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.head_articleContent h3 {
+    font-size: 14px;
+    color: #202020;
+}
+.article_content  p {
+    font-size: 14px;
+    color: #535353;
+    line-height: 23px;
+}
+.picture_content {
+    width: 85%;
+    height: auto;
+    border: solid 1px red;
+    overflow: hidden;
+    margin: 13px auto;
+}
+.logo_pictureContent {
+    width: 33%;
+    height: auto;
+    float: left;
+    margin-left: 11%;
+    margin-top: 23px;
+    margin-bottom: 31px;
+}
+.logo_pictureContent img {
+    width: 100%;
+    height: auto;
+}
+.weiXin  {
+    float: right;
+    width: 32%;
+    margin-right: 13%;
+    height: auto;
+    margin-top: 20px;
+}
+.logo_weiXin {
+    width: 100%;
+    height: auto;
+}
+.logo_weiXin img {
+    width: 100%;
+    height: auto;
+}
+.text_weiXin {
+    width: 100%;
+    height: auto;
+}
+.text_weiXin p {
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    color: #323232;
+    font-weight: bold;
+    text-align: center;
+}
+.lastArticle  {
+    font-size: 10px;
+    color: #535353;
+    margin-top: 14px;
+    margin-left: 3%;
+}
+.button_lastArticle {
+    margin-right:8px;
+    vertical-align: middle;
+}
+.register {
+    width: 95%;
+    height: auto;
+    margin: 10px auto 0 auto;
+    background: url("../img/border_register.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+.firstParagraph_register {
+    width: 100%;
+    padding-left: 3%;
+    padding-top: 15px;
+    overflow: hidden;
+    padding-bottom: 8px;
+    border-bottom: dotted 1px #f4b8b7;
+    box-sizing: border-box;
+}
+.head_firstParagraph {
+    font-size: 14px;
+    color: #323232;
+    width: 97%;
+    margin-bottom: 7px;
+    line-height: 22px;
+}
+.body_firstParagraph {
+    width: 97%;
+    height: auto;
+    margin-right: 10px;
+}
+.list_bodyFirstParagraph {
+    float:left;
+    width:100%;
+    height: auto;
+    font-size: 14px;
+    color: #535353;
+}
+.item_bodyFirstParagraph {
+    margin-right:120px;
+}
+.image_bodyFirstParagraph {
+    position:relative;
+    float:right;
+    width:100px;
+    margin-left:-100px
+}
+.image_bodyFirstParagraph img {
+    width: 100%;
+    height: auto;
+}
+.body_firstParagraph li {
+    list-style: none;
+   line-height: 22px;
+}
+.secondParagraph_register {
+    width: 97%;
+    padding-left: 3%;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #535353;
+}
+.secondParagraph_register li {
+    width: 90%;
+    height: auto;
+    list-style: none;
+    line-height: 23px;
+}
+.secondParagraph_register li p {
+    line-height: 28px;
+}
+.tipParagraph_register {
+    width: 90%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+.tipParagraph_register img {
+    width: 100%;
+    height: auto;
+}
+.text_input {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #1f1f1f;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.firstStyle_input {
+    height: 30px;
+    border: 1px solid #9f9f9f;
+    width: 100%;
+    float: right;
+}
+.firstStyle_inputContent {
+    height: 30px;
+    border: 1px solid #9f9f9f;
+    width: 50%;
+    float: left;
+}
+.secondStyle_input {
+    width: 100%;
+    border: 0;
+    height: 30px;
+}
+
+.fiveStyle_input {
+    width: 100%;
+    border: 1px solid #9f9f9f ;
+    float: right;
+}
+.firstLabel {
+    width: 80px;
+    height: 30px;
+    float: left;
+    position:relative;
+    margin-right:-80px;
+}
+.firstInput {
+    float:right;
+    width:100%;
+}
+.secondInput {
+    margin-left:80px;
+}
+.secondInputSex {
+    border: 0;
+    line-height: 30px
+}
+.firstLabel p {
+    display: block;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+}
+.fistSpan {
+    color: #d00d0d;
+}
+.buttonLabel {
+    text-align: center;
+    margin-top: 23px;
+    padding-bottom: 30px;
+}
+.submitStyle {
+    border: 0;
+    padding: 7px 40px;
+    background: #f26518;
+    color: white;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.secondSubmit {
+    width: 45%;
+    height: auto;
+    float: right;
+}
+.secondSubmitStyle {
+    text-align: center;
+    border: solid 1px #9f9f9f;
+    background: #f8f8f8;
+    color: #5c5c5c;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 3px;
+    width: 100%;
+    line-height: 30px;
+}
+.secondSubmitStyle p {
+    font-size: 7px;
+    width:100% ;
+}
+
+.thirdInput {
+    float:left;
+    width:100%;
+}
+ .fourInput {
+    margin:0 85px 0 80px;
+    border:solid 1px #9f9f9f ;
+    height: 30px;
+}
+.secondLabel {
+    width: 80px;
+    height: 30px;
+    float: left;
+    position:relative;
+    margin-right:-80px;
+}
+.secondLabel p {
+    display: block;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+}
+.sexRadio {
+    width: 12px;
+    height: 12px;
+    margin-top: 9px;
+    margin-right: 5px;
+}
+.secondRadio {
+    width: 12px;
+    height: 12px;
+    margin-top: 9px;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    font-size: 14px;
+}
+.head_form li{
+    display: inline;
+    width: 50%;
+    height: 30px;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+#tabs {
+    width: 100%;
+    height: 30px;
+}
+.list   {
+    width: 50%;
+    height: 30px;
+}
+.on {
+    background: #ababab;
+}
+.bottom_form{
+    width: 100%;
+}
+.bottom_form .box{
+    width: 100%;
+}

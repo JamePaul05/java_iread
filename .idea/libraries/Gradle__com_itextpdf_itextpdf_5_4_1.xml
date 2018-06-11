@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.itextpdf:itextpdf:5.4.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/itextpdf/5.4.1/aa0865266dd023157a4f5f1e28fb3ba7c36c3d38/itextpdf-5.4.1.jar!/" />
+      <root url="jar://D:/Gradle/gradle-4.1/caches/modules-2/files-2.1/com.itextpdf/itextpdf/5.4.1/aa0865266dd023157a4f5f1e28fb3ba7c36c3d38/itextpdf-5.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/itextpdf/5.4.1/d12fc7bea9fd2063e3118b6da576cbcb38cad43a/itextpdf-5.4.1-sources.jar!/" />
+      <root url="jar://D:/Gradle/gradle-4.1/caches/modules-2/files-2.1/com.itextpdf/itextpdf/5.4.1/d12fc7bea9fd2063e3118b6da576cbcb38cad43a/itextpdf-5.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

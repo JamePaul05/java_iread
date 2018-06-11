@@ -1,0 +1,13 @@
+.no-margin {
+	margin-top: 0;
+}
+
+html, body {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	background: #fbf9fe;
+}
+.pointer {
+	cursor: pointer;
+}

@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.header img {
+    width: 100%;
+    height: auto;
+}
+.text_input {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #1f1f1f;
+    padding-left: 20px;
+    overflow: hidden;
+}
+.firstLabel {
+    width: 80px;
+    height: 30px;
+    float: left;
+    position:relative;
+    margin-right:-80px;
+}
+.firstLabel p {
+    display: block;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+}
+.firstInput {
+    float:right;
+    width:100%;
+}
+.secondInput {
+    margin-left:80px;
+}
+.secondInput p {
+    line-height: 30px;
+}
+.buttonLabel {
+    text-align: center;
+    margin-top: 23px;
+    padding-bottom: 30px;
+}
+.submitStyle {
+    border: 0;
+    padding: 7px 40px;
+    background: #f26518;
+    color: white;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.firstStyle_input {
+    height: 30px;
+    border: 1px solid #9f9f9f;
+    width: 100%;
+    float: right;
+}

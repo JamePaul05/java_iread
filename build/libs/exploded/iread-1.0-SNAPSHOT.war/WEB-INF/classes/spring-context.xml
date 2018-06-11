@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!--读取application.properties-->
+    <bean id="configProperties"
+          class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath*:application.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--扫描对应包下的java文件，如果有注解就注册为bean，包括了<context:annotation-config/>的功能-->
+    <context:component-scan base-package="com.ifuture.iread.entity" />
+    <context:component-scan base-package="com.ifuture.iread.service" />
+    <context:component-scan base-package="com.ifuture.iread.util" />
+
+    <!--LocalContainerEntityManagerFactoryBean,适用于所有环境的FactoryBean，
+    能全面控制EntityManagerFactory配置，非常适合那种需要细粒度定制的环境-->
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <!--指定持久化单元名称-->
+        <property name="persistenceUnitName" value="mysql" />
+        <!--指定JPA配置文件-->
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+        <!--设置JPA实现厂商的特定属性-->
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true" />
+                <property name="database" value="MYSQL" />
+                <!--在项目启动的过程中，自动检查注解的实体和数据表，如果数据库不存在的标，会根据实体自动生成-->
+                <property name="generateDdl" value="true" />
+            </bean>
+        </property>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <!--配置了 <jpa:repositories> 后，Spring 初始化容器时将会扫描 base-package 指定的包目录及其子目录，
+        为继承 Repository 或其子接口的接口创建代理对象，
+        并将代理对象注册为 Spring Bean，业务层便可以通过 Spring 自动封装的特性来直接使用该对象-->
+    <jpa:repositories base-package="com.ifuture.iread.repository"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref="transactionManager" />
+
+</beans>

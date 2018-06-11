@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+
+    <!-- Name属性用于定义持久化单元的名字 (name必选,空值也合法);
+      transaction-type 指定事务类型(可选)-->
+    <persistence-unit name="mysql" transaction-type="RESOURCE_LOCAL">
+        <!-- javax.persistence.PersistenceProvider接口的一个实现类(可选) -->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <properties>
+            <!--自定义的Dialect，否则建表总是不是utf8编码-->
+            <property name="hibernate.dialect" value="com.ifuture.iread.util.MyMysqlDialect" />
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.username" value="root" />
+            <!--Fengyuntec@2016-->
+            <property name="hibernate.connection.password" value="lk19951203" />
+            <!--<property name="hibernate.connection.password" value="root" />-->
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://localhost:3306/iread?useUnicode=true&amp;characterEncoding=UTF-8" />
+
+            <!--create是建表、清空数据库数据
+            update可以修改表中的数据、可以修改表结构、不可以建表
+            none只可以修改表中的数据，不编辑表结构 -->
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+            <property name="hibernate.connection.provider_class"
+                      value="org.hibernate.c3p0.internal.C3P0ConnectionProvider" />
+            <!-- 当连接池里面的连接用完的时候，C3P0一下获取的新的连接数 -->
+            <property name="hibernate.c3p0.acquire_increment" value="4" />
+            <property name="hibernate.c3p0.idle_test_period" value="3000" />
+            <!--最大连接数-->
+            <property name="hibernate.c3p0.max_size" value="100" />
+            <!--可以执行SQL语句的对象的个数-->
+            <property name="hibernate.c3p0.max_statements" value="15" />
+            <!--最小连接数-->
+            <property name="hibernate.c3p0.min_size" value="5" />
+            <!-- 获得连接的超时时间,如果超过这个时间,会抛出异常，单位毫秒 -->
+            <property name="hibernate.c3p0.timeout" value="25200" />
+            <property name="hibernate.c3p0.preferredTestQuery" value="select 1;" />
+
+        </properties>
+    </persistence-unit>
+
+</persistence>

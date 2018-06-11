@@ -1,0 +1,114 @@
+group 'com.ifuture.iread'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    //mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    mavenCentral()
+}
+
+/*有一些基础包没有列出，检查依赖即可*/
+/*tomcat8对servlet.api和jsp.api这两个jar包有版本要求，低版本会造成冲突*/
+dependencies {
+//    引入本地jar包
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+    //spring
+    compile  'org.springframework:spring-context:4.1.6.RELEASE'
+    compile  'org.springframework:spring-orm:4.1.6.RELEASE'
+    //springmvc
+    compile  'org.springframework:spring-webmvc:4.1.6.RELEASE'
+    //spring-security
+    compile  'org.springframework.security:spring-security-config:4.0.2.RELEASE'
+    compile  'org.springframework.security:spring-security-taglibs:4.0.2.RELEASE'
+    //spring-data-jpa
+    compile  'org.springframework.data:spring-data-commons:1.10.1.RELEASE'
+    compile  'org.springframework.data:spring-data-jpa:1.8.1.RELEASE'
+    compile  'org.aspectj:aspectjrt:1.6.10'
+    compile group: 'com.mchange', name: 'c3p0', version: '0.9.5.2'
+
+    //heibernate
+    compile  'org.hibernate:hibernate-entitymanager:4.3.10.Final'
+    compile  'org.hibernate:hibernate-c3p0:4.3.10.Final@jar'
+    compile  'mysql:mysql-connector-java:5.1.35'
+
+    compile  'com.fasterxml.jackson.core:jackson-databind:2.6.0'
+    compile  'com.fasterxml.jackson.core:jackson-core:2.6.0'
+    compile  'com.fasterxml.jackson.core:jackson-annotations:2.6.0'
+
+    //json
+    compile  'org.json:json:20160212'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.7'
+    compile  'org.slf4j:slf4j-api:1.7.5'
+    compile  'org.slf4j:jcl-over-slf4j:1.7.5'
+    compile  'org.slf4j:slf4j-log4j12:1.7.5'
+    compile  'log4j:log4j:1.2.15'
+    compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.1'
+    //pinyin4j
+//    compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.0'
+
+    compile  'javax.servlet:jstl:1.2'
+
+    //tiles
+    compile  'commons-beanutils:commons-beanutils:1.9.2'
+    compile  'org.apache.tiles:tiles-core:3.0.5'
+    compile  'org.apache.tiles:tiles-api:3.0.5'
+    compile  'org.apache.tiles:tiles-template:3.0.5'
+    compile  'org.apache.tiles:tiles-servlet:3.0.5'
+    compile  'org.apache.tiles:tiles-jsp:3.0.5'
+
+    //验证
+    compile  'javax.validation:validation-api:1.1.0.Final'
+    compile  'org.hibernate:hibernate-validator:5.2.0.Final'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore
+    compile group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.1'
+
+    compile  'com.thoughtworks.xstream:xstream:1.4.8'
+    compile group: 'jdom', name: 'jdom', version: '1.1'
+    compile group: 'net.sf.json-lib', name: 'json-lib', version: '2.4', classifier: 'jdk15'
+    compile  'commons-httpclient:commons-httpclient:3.1'
+
+    // https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker
+    compile group: 'com.itextpdf.tool', name: 'xmlworker', version: '5.4.1'
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        //mavenCentral()
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.0.1"
+    }
+}
+
+apply plugin: "org.sonarqube"
+
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "src"
+        property "sonar.language", "java"
+        /*property "sonar.exclusions", "**//**//*LdapUtilTest.java"*/
+        property "sonar.projectName", "iread"
+        property "sonar.projectKey", "org.sonarqube:iread"
+        property "sonar.host.url", "http://172.16.200.155:9000"
+        property "sonar.jdbc.url", "jdbc:mysql://172.16.200.155:3306/sonar"
+        property "sonar.jdbc.username", "sonar"
+        property "sonar.jdbc.password", "sonar"
+    }
+}

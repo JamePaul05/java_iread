@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition name="tiles.main" template="/WEB-INF/views/layout/main.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+        <put-attribute name="left" value="/WEB-INF/views/layout/left.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+    </definition>
+
+    <definition name="main.index.list" extends="tiles.main">
+        <put-attribute name="title" value="首页" />
+        <put-attribute name="content" value="/WEB-INF/views/index/index_list.jsp" />
+    </definition>
+
+
+    <definition name="main.user.list" extends="tiles.main">
+        <put-attribute name="title" value="用户管理" />
+        <put-attribute name="content" value="/WEB-INF/views/user/user_list.jsp" />
+    </definition>
+
+    <definition name="main.user.updatePassword" extends="tiles.main">
+        <put-attribute name="title" value="用户管理" />
+        <put-attribute name="content" value="/WEB-INF/views/user/user_update_password.jsp" />
+    </definition>
+
+    <definition name="main.user.create" extends="tiles.main">
+        <put-attribute name="title" value="用户管理" />
+        <put-attribute name="content" value="/WEB-INF/views/user/user_create.jsp" />
+    </definition>
+
+    <definition name="main.user.edit" extends="tiles.main">
+        <put-attribute name="title" value="用户管理" />
+        <put-attribute name="content" value="/WEB-INF/views/user/user_edit.jsp" />
+    </definition>
+
+
+    <definition name="main.menu.list" extends="tiles.main">
+        <put-attribute name="title" value="菜单管理" />
+        <put-attribute name="content" value="/WEB-INF/views/menu/menu_list.jsp" />
+    </definition>
+
+    <definition name="main.menu.create" extends="tiles.main">
+        <put-attribute name="title" value="菜单管理" />
+        <put-attribute name="content" value="/WEB-INF/views/menu/menu_create.jsp" />
+    </definition>
+
+    <definition name="main.menu.edit" extends="tiles.main">
+        <put-attribute name="title" value="菜单管理" />
+        <put-attribute name="content" value="/WEB-INF/views/menu/menu_edit.jsp" />
+    </definition>
+
+    <definition name="main.city.list" extends="tiles.main">
+        <put-attribute name="title" value="城市管理" />
+        <put-attribute name="content" value="/WEB-INF/views/city/city_list.jsp" />
+    </definition>
+
+    <definition name="main.city.create" extends="tiles.main">
+        <put-attribute name="title" value="城市管理" />
+        <put-attribute name="content" value="/WEB-INF/views/city/city_create.jsp" />
+    </definition>
+
+    <definition name="main.city.edit" extends="tiles.main">
+        <put-attribute name="title" value="城市管理" />
+        <put-attribute name="content" value="/WEB-INF/views/city/city_edit.jsp" />
+    </definition>
+
+    <definition name="main.shop.list" extends="tiles.main">
+        <put-attribute name="title" value="公益点管理" />
+        <put-attribute name="content" value="/WEB-INF/views/shop/shop_list.jsp" />
+    </definition>
+
+    <definition name="main.shop.create" extends="tiles.main">
+        <put-attribute name="title" value="公益点管理" />
+        <put-attribute name="content" value="/WEB-INF/views/shop/shop_create.jsp" />
+    </definition>
+
+    <definition name="main.shop.edit" extends="tiles.main">
+        <put-attribute name="title" value="公益点管理" />
+        <put-attribute name="content" value="/WEB-INF/views/shop/shop_edit.jsp" />
+    </definition>
+
+    <definition name="main.role.list" extends="tiles.main">
+        <put-attribute name="title" value="角色管理" />
+        <put-attribute name="content" value="/WEB-INF/views/role/role_list.jsp" />
+    </definition>
+
+    <definition name="main.role.create" extends="tiles.main">
+        <put-attribute name="title" value="角色管理" />
+        <put-attribute name="content" value="/WEB-INF/views/role/role_create.jsp" />
+    </definition>
+
+    <definition name="main.role.edit" extends="tiles.main">
+        <put-attribute name="title" value="角色管理" />
+        <put-attribute name="content" value="/WEB-INF/views/role/role_edit.jsp" />
+    </definition>
+
+    <definition name="main.member.list" extends="tiles.main">
+        <put-attribute name="title" value="会员管理" />
+        <put-attribute name="content" value="/WEB-INF/views/member/member_list.jsp" />
+    </definition>
+
+    <definition name="main.member.create" extends="tiles.main">
+        <put-attribute name="title" value="会员管理" />
+        <put-attribute name="content" value="/WEB-INF/views/member/member_create.jsp" />
+    </definition>
+
+    <definition name="main.member.edit" extends="tiles.main">
+        <put-attribute name="title" value="会员管理" />
+        <put-attribute name="content" value="/WEB-INF/views/member/member_edit.jsp" />
+    </definition>
+
+
+    <definition name="main.memberLevel.list" extends="tiles.main">
+        <put-attribute name="title" value="会员等级管理" />
+        <put-attribute name="content" value="/WEB-INF/views/memberLevel/memberLevel_list.jsp" />
+    </definition>
+
+    <definition name="main.memberLevel.create" extends="tiles.main">
+        <put-attribute name="title" value="会员等级管理" />
+        <put-attribute name="content" value="/WEB-INF/views/memberLevel/memberLevel_create.jsp" />
+    </definition>
+
+    <definition name="main.memberLevel.edit" extends="tiles.main">
+        <put-attribute name="title" value="会员等级管理" />
+        <put-attribute name="content" value="/WEB-INF/views/memberLevel/memberLevel_edit.jsp" />
+    </definition>
+
+
+    <definition name="main.book.list" extends="tiles.main">
+        <put-attribute name="title" value="书本管理" />
+        <put-attribute name="content" value="/WEB-INF/views/book/book_list.jsp" />
+    </definition>
+
+    <definition name="main.book.create" extends="tiles.main">
+        <put-attribute name="title" value="书本管理" />
+        <put-attribute name="content" value="/WEB-INF/views/book/book_create.jsp" />
+    </definition>
+
+    <definition name="main.book.edit" extends="tiles.main">
+        <put-attribute name="title" value="书本管理" />
+        <put-attribute name="content" value="/WEB-INF/views/book/book_edit.jsp" />
+    </definition>
+
+    <definition name="main.booklet.list" extends="tiles.main">
+        <put-attribute name="title" value="书册管理" />
+        <put-attribute name="content" value="/WEB-INF/views/booklet/booklet_list.jsp" />
+    </definition>
+
+
+
+</tiles-definitions>
